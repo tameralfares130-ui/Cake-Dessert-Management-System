@@ -1,0 +1,7 @@
+@extends('layouts.app')
+@section('title','Mainpage')
+@section('content')
+<section class="hero shadow-sm rounded-4 p-5 mb-5"><div class="row align-items-center g-4"><div class="col-md-7"><span class="badge text-bg-light mb-3">A little sweetness every day</span><h1 class="display-5 fw-bold">Discover cakes, pastries & desserts</h1><p class="lead">Explore a real Hungarian confectionery dataset with recipes, dietary markers and pricing options.</p><a class="btn btn-dark btn-lg" href="{{ route('database') }}">Explore desserts</a> <a class="btn btn-outline-dark btn-lg" href="{{ route('graph') }}">View statistics</a></div><div class="col-md-5 text-center hero-emoji" aria-hidden="true">🧁 🍰 🍮</div></div></section>
+<div class="row align-items-center mb-3"><div class="col"><h2 class="h3">Featured cakes</h2><p class="text-muted">{{ $total }} products in the original dataset</p></div><div class="col-auto"><a href="{{ route('database') }}">View all →</a></div></div>
+<div class="row g-4">@foreach($featured as $cake)<div class="col-sm-6 col-lg-4"><div class="card h-100 product-card"><div class="card-body"><div class="display-5 mb-3" aria-hidden="true">🍰</div><span class="badge text-bg-light">{{ $cake->type }}</span><h3 class="h5 mt-3">{{ $cake->cname }}</h3><p class="text-muted mb-0">@if($cake->prices->isNotEmpty())From {{ number_format($cake->prices->min('price')) }} Ft (see units in database)@else Price not listed @endif</p></div></div></div>@endforeach</div>
+@endsection

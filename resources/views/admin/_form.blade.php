@@ -1,0 +1,5 @@
+@csrf
+<div class="mb-3"><label class="form-label" for="cname">Confection name</label><input class="form-control" id="cname" name="cname" value="{{ old('cname',$confection->cname ?? '') }}" maxlength="255" required></div>
+<div class="mb-3"><label class="form-label" for="type">Type</label><input class="form-control" id="type" name="type" value="{{ old('type',$confection->type ?? '') }}" maxlength="100" required></div>
+<div class="mb-3"><label class="form-label" for="prizewinning">Original prizewinning flag</label><select class="form-select" name="prizewinning" id="prizewinning" required>@foreach(['0'=>'0','1'=>'1','-1'=>'-1'] as $value=>$label)<option value="{{ $value }}" @selected((string)old('prizewinning',$confection->prizewinning ?? 0)===(string)$value)>{{ $label }}</option>@endforeach</select><div class="form-text">The source data uses 0 and -1. Values are preserved; their exact meaning beyond the source Boolean description is unspecified.</div></div>
+<button type="submit" class="btn btn-primary">Save confection</button><a href="{{ route('admin.confections.index') }}" class="btn btn-outline-secondary">Cancel</a>
