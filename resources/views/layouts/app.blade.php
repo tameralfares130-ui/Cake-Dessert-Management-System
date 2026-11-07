@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head><meta charset="UTF-8"><meta name="description" content="Sweet Crumbs is a cake and dessert management system featuring confectionery data, prices, charts, and customer contact."><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>@yield('title','Cake & Dessert') | Cake & Dessert Management</title>
 <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/minty/bootstrap.min.css" rel="stylesheet">
 <link href="{{ asset('css/site.css') }}" rel="stylesheet">
