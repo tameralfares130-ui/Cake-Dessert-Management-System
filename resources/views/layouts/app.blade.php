@@ -4,6 +4,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/minty/bootstrap.min.css" rel="stylesheet">
 <link href="{{ asset('css/site.css') }}" rel="stylesheet">
 </head><body class="d-flex flex-column min-vh-100">
+<a class="visually-hidden-focusable position-absolute top-0 start-0 bg-white p-2" href="#main-content">Skip to main content</a>
 <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm"><div class="container">
 <a class="navbar-brand fw-bold" href="{{ route('home') }}">🍰 Sweet Crumbs</a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -19,7 +20,7 @@
 <li class="nav-item me-2 small text-muted">{{ auth()->user()->name }} ({{ auth()->user()->role }})</li>
 <li class="nav-item"><form action="{{ route('logout') }}" method="POST">@csrf<button class="btn btn-outline-primary btn-sm" type="submit">Logout</button></form></li>@endguest
 </ul></div></div></nav>
-<main class="flex-grow-1"><div class="container py-4">
+<main id="main-content" class="flex-grow-1"><div class="container py-4">
 @if(session('success'))<div class="alert alert-success" role="alert">{{ session('success') }}</div>@endif
 @if($errors->any())<div class="alert alert-danger"><strong>Please fix the following:</strong><ul class="mb-0">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif
 @yield('content')
