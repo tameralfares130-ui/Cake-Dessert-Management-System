@@ -5,4 +5,7 @@
 <div class="mb-3"><label class="form-label" for="email">Email</label><input class="form-control" id="email" type="email" name="email" value="{{ old('email') }}" required></div>
 <div class="mb-3"><label class="form-label" for="subject">Subject</label><input class="form-control" id="subject" name="subject" value="{{ old('subject') }}" required maxlength="150"></div>
 <div class="mb-3"><label class="form-label" for="message">Message (at least 10 characters)</label><textarea class="form-control" id="message" name="message" rows="5" required minlength="10" maxlength="3000">{{ old('message') }}</textarea></div><button class="btn btn-primary" type="submit">Send message</button></form></div></div></div></div>
+<p class="small text-muted mt-3">
+    Please fill in all required fields before submitting your message.
+</p>
 @endsection
