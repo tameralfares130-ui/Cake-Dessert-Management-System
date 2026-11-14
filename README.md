@@ -4,7 +4,7 @@ A Web Programming II lecture homework project based on the professor-provided **
 
 ## Requirements
 
-- PHP 8.2 or newer, Composer, and a MySQL server (such as XAMPP MySQL)
+- PHP 8.4.1 or newer for the committed dependency lock file, Composer, and a MySQL server (such as XAMPP MySQL)
 - VS Code or another editor
 - Internet access for the Bootswatch (Minty), Bootstrap JS, and Chart.js CDNs
 - SQLite PHP extension if you want to run the optional automated tests
@@ -12,7 +12,7 @@ A Web Programming II lecture homework project based on the professor-provided **
 ## Local setup (Windows, VS Code)
 
 1. Extract the ZIP to a suitable location and open **CakeDessertManagement** in VS Code.
-2. Ensure that PHP 8.2+ and Composer are available. In the VS Code terminal run:
+2. Ensure that PHP 8.4.1+ and Composer are available. In the VS Code terminal run:
 
    ```powershell
    php -v
@@ -71,20 +71,20 @@ After configuring the dependencies and PHP SQLite extension:
 php artisan test
 ```
 
-Automated tests cover public routes, authentication authorization, registration role protection, admin create, and message validation.
+The suite has 20 tests covering public routes, login/logout, registration role protection, all CRUD operations, write authorization, contact validation, message ordering and escaping, filters and pagination, graph data, and repeatable dataset seeding. See `docs/TEST_RESULTS.md` for the observed local results and their limits. GitHub Actions runs this suite on pull requests and pushes to main.
 
 ## Hosting
 
-1. Choose a PHP 8.2+ hosting service with MySQL and Laravel support.
+1. Choose a PHP 8.4.1+ hosting service with MySQL and Laravel support.
 2. Install Composer dependencies and set `APP_ENV=production`, `APP_DEBUG=false`, `APP_URL`, a unique `APP_KEY`, secure MySQL credentials, and appropriate directory permissions.
 3. Point the site's web document root to **the `public/` directory only** (never expose `.env` or other Laravel application files).
 4. Run `php artisan migrate --force` and `php artisan db:seed --force` as appropriate; create admin credentials securely before the first seeding.
 5. Ensure session/cache files are writable, external CDNs load, and HTTPS is enabled.
 
-Hosting deployment, GitHub team history, site URLs, live screenshots and personal details **cannot be completed automatically** within this source ZIP. Update the accompanying documentation with real evidence after deploying and testing. Do not place hosting FTP or database passwords in a public repository.
+The public deployment is https://sweetcrumbs-bakery.freehosting.dev and the repository is https://github.com/tameralfares130-ui/Cake-Dessert-Management-System. On 14 November 2026 the public home, database and graph pages loaded, but the live graph lacked the totals already added by PR #4. Deployment parity and authenticated live tests remain outstanding. Do not place hosting FTP or database passwords in a public repository.
 
 ## Teamwork / submission
 
-The professor requires a two-person team, at least five meaningful GitHub history steps, visible contributions from both team members, public repository, live hosting, and a minimum ten-page PDF with real screenshots. Each member submits the PDF to Teams. Update the footer creator names and Neptun codes in `resources/views/layouts/app.blade.php` before submission.
+The professor requires a two-person team, at least five meaningful GitHub history steps, visible contributions from both team members, public repository, live hosting, and a minimum ten-page PDF with real screenshots. Each member submits the PDF to Teams. The shared footer lists Tamer Al Fares / Q542ZU and Shahriar Mir Munem / C2TB9P. See `docs/SUBMISSION_CHECKLIST.md` for outstanding evidence.
 
-**Important course distinction:** The professor says to extend the exact `Solutions.zip` Authentication lesson starter (React starter kit). That starter ZIP was not among the uploaded files; this standalone application implements conventional Laravel session authentication instead. To meet that literal requirement, merge/adapt the code into the lecturer's provided Authentication starter and verify compatibility.
+**Important course distinction:** The professor says to extend the exact `Solutions.zip` Authentication lesson starter. That starter ZIP was not among the uploaded files; this standalone application implements conventional Laravel session authentication instead. To meet that literal requirement, merge/adapt the code into the lecturer's provided Authentication starter and verify compatibility.
