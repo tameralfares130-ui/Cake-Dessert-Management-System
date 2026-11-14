@@ -16,6 +16,7 @@
         <input
             class="form-control"
             name="search"
+            maxlength="255"
             value="{{ request('search') }}"
             placeholder="Search cakes by name"
             aria-label="Search by name"
