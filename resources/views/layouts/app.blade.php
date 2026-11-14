@@ -25,7 +25,7 @@
 @if($errors->any())<div class="alert alert-danger"><strong>Please fix the following:</strong><ul class="mb-0">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif
 @yield('content')
 </div></main>
-<footer class="bg-white border-top py-4 mt-4"><div class="container d-flex flex-wrap justify-content-between gap-2 small text-muted"><span>Sweet Crumbs · Laravel Confectionery Coursework</span><span>Creators: [Tamer Al Fares/Q542ZU] · [Shahriar Mir Munem/C2tb9p]</span></div></footer>
+<footer class="bg-white border-top py-4 mt-4"><div class="container d-flex flex-wrap justify-content-between gap-2 small text-muted"><span>Sweet Crumbs · Laravel Confectionery Coursework</span><span>Creators: Tamer Al Fares / Q542ZU · Shahriar Mir Munem / C2TB9P</span></div></footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 @stack('scripts')
 </body></html>
